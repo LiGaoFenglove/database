@@ -1,0 +1,157 @@
+@charset "UTF-8";
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, input, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "微软雅黑";
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a, u {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+b, strong {
+  font-weight: 100;
+}
+
+em, i {
+  font-style: normal;
+}
+
+img {
+  border: 0;
+  display: block;
+}
+
+body {
+  font-size: 12px;
+  color: #192E32;
+}
+
+#header {
+  margin: 0 auto;
+  background: #303030;
+  height: 76px;
+}
+#header .logo {
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 262px;
+  height: 45px;
+  float: left;
+}
+#header .license {
+  height: 50px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+#header .submenu {
+  text-align: center;
+  width: 1000px;
+  position: absolute;
+  right: 0px;
+  height: 75px;
+}
+#header .submenu ul li {
+  float: right;
+  width: 82px;
+  height: 82px;
+}
+#header .submenu ul li a {
+  text-align: center;
+  height: 67px;
+  width: 82px;
+  padding-top: 8px;
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+}
+#header .submenu ul li a img {
+  margin: auto;
+  display: block;
+  height: 35px;
+}
+#header .submenu ul li a span {
+  margin-top: 6px;
+  display: block;
+}
+#header .submenu ul li a:hover {
+  background: #555;
+}
+
+#menu {
+  margin: 0 auto;
+  background: #575757;
+  height: 41px;
+  border-bottom: 1px solid #212121;
+}
+#menu ul {
+  margin: 0px 0px 0px 15px;
+  padding: 0;
+  list-style-type: none;
+}
+#menu ul li {
+  float: left;
+  display: block;
+  height: 41px;
+  line-height: 41px;
+  position: relative;
+}
+#menu ul li a {
+  float: left;
+  color: #FFF;
+  padding: 0px 12px;
+  display: block;
+  text-decoration: none;
+}
+#menu ul li a img {
+  width: 17px;
+  height: 18px;
+  vertical-align: middle;
+  display: inline-block;
+}
+#menu ul li a span {
+  margin-left: 10px;
+}
+#menu ul li a .num {
+  width: 32px;
+  height: 16px;
+  background: url(../../images/main/lg6.png) no-repeat scroll;
+  display: inline-block;
+  line-height: 16px;
+  vertical-align: middle;
+  text-align: center;
+}
+#menu ul li .mune_cl {
+  height: 13px;
+  width: 0px;
+  border-right: 1px solid #656565;
+  margin-top: 15px;
+  border-left: 1px solid #303030;
+  display: inline-block;
+}
+#menu ul li:hover {
+  background: #444;
+}
+#menu ul li:hover a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=main.css.map */

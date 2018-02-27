@@ -9,5 +9,9 @@ router.get('/', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'login' });
 });
+//后台页面
+router.get('/main', function(req, res, next) {
+  res.render('main', { title: 'main' });
+});
 
 module.exports = router;

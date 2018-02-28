@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>add-list</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/css/addlist.css">
+</head>
+<body>
+	<h1>
+		<span class="action-span"><a href="">商品列表</a></span>
+		<span class="action-span1"><a href="">ECSHOP 管理中心</a></span>
+		<span id="search_id" class="action-span1"> - 添加新商品 </span>
+		<span class="help_sub"><a target="_blank" title="添加新商品帮助文档" href=""><img src="../images/addlist/fr9.png"></a></span>
+	</h1>
+	<!-- 列表 -->
+	<div id="tab-div">
+		<div class="tabbar-div">
+			<p>
+        	<span class="tab-front" id="general-tab">通用信息</span>
+        	<span class="tab-back" id="detail-tab">详细描述</span>
+        	<span class="tab-back" id="mix-tab">其他信息</span>
+        	<span class="tab-back" id="properties-tab">商品属性</span>
+        	<span class="tab-back" id="gallery-tab">商品相册</span>
+        	<span class="tab-back" id="linkgoods-tab">关联商品</span>
+        	<span class="tab-back" id="groupgoods-tab">配件</span>
+        	<span class="tab-back" id="article-tab">关联文章</span>
+      		</p>
+		</div>
+		<div class="tabbody-div">
+			<form>
+				<table>
+					<tbody>
+						<tr>
+							<td class="label">商品名称：</td>
+							<td>
+								<input type="text" name="goods_name" value="" style="float:left;color:;" size="30">
+								<div style="background-color:;float:left;margin:10px 0 0 5px;" id="font_color" onclick="ColorSelecter.Show(this);"><img src="../images/addlist/color_selecter.gif" style="margin-top:-1px;"></div>
+								<select name="goods_name_style">
+				              		<option value="">字体样式</option>
+				              		<option value="strong">加粗</option>
+				              		<option value="em">斜体</option>
+				              		<option value="u">下划线</option>
+				              		<option value="strike">删除线</option>            
+				              	</select>
+				              	<span class="require-field">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<a href=""><img src="../images/addlist/notice.gif"></a>
+								 商品货号： 
+							</td>
+							<td>
+								<input type="text" name="goods_sn" value="" size="20">
+								<span id="goods_sn_notice"></span><br>
+							    <span class="notice-span" style="display:block" id="noticeGoodsSN">如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">商品分类：</td>
+							<td>
+								<select name="goods_name_style">
+				              		<option value="" >休闲长袖衬衫</option>
+				              		<option value="strong">裤子</option>
+				              		<option value="em">上衣</option>
+				              		<option value="u">短袖</option>
+				              		<option value="strike">棉服</option>            
+				              	</select>
+				              	<span class="require-field">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">扩展分类：</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="label">商品品牌：</td>
+							<td>
+								<select name="goods_name_style">
+				              		<option value="" >空间大师</option>
+				              		<option value="strong">太平鸟</option>
+				              		<option value="em">贝贝</option>
+				              		<option value="u">雅舒</option>
+				              		<option value="strike">千千</option>            
+				              	</select>
+				              	<!-- <span class="require-field">*</span> -->
+							</td>
+						</tr>
+						<tr>
+							<td class="label">本店售价：</td>
+							<td>
+								<input type="text" name="shop_price" value="0" size="20" onblur="priceSetted()">
+								<span class="require-field">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label"><a href=""><img src="../images/addlist/notice.gif"></a>会员价格：</td>
+							<td>
+								<input type="text" name="shop_price" value="0" size="20" onblur="priceSetted()">
+							</td>
+						</tr>
+						<tr>
+							<td class="label">市场售价：</td>
+							<td>
+								<input type="text" name="shop_price" value="0" size="20" onblur="priceSetted()">
+							</td>
+						</tr>
+						<tr>
+							<td class="label">虚拟销量：</td>
+							<td>
+								<input type="text" name="shop_price" value="0" size="20" onblur="priceSetted()">
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<a href=""><img src="../images/addlist/notice.gif"></a>
+								 赠送消费积分数：
+							</td>
+							<td>
+								<input type="text" name="goods_sn" value="" size="20">
+								<span id="goods_sn_notice"></span><br>
+							    <span class="notice-span" style="display:block" id="noticeGoodsSN">购买该商品时赠送消费积分数,-1表示按商品价格赠送。</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<a href=""><img src="../images/addlist/notice.gif"></a>
+								 赠送等级积分数：
+							</td>
+							<td>
+								<input type="text" name="goods_sn" value="" size="20">
+								<span id="goods_sn_notice"></span><br>
+							    <span class="notice-span" style="display:block" id="noticeGoodsSN">购买该商品时赠送等级积分数,-1表示按商品价格赠送</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<a href=""><img src="../images/addlist/notice.gif"></a>
+								  积分购买金额：
+							</td>
+							<td>
+								<input type="text" name="goods_sn" value="" size="20">
+								<span id="goods_sn_notice"></span><br>
+							    <span class="notice-span" style="display:block" id="noticeGoodsSN">(此处需填写金额)购买该商品时最多可以使用积分的金额</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<label for="is_promote"><input type="checkbox" id="is_promote" name="is_promote" value="1" > 促销价：</label>
+							</td>
+							<td>
+								<input type="text" id="promote_1" name="promote_price" value="0" size="20" disabled="">
+							</td>
+						</tr>
+						<tr>
+							<td class="label">促销日期：</td>
+							<td>
+								<input type="text" id="promote_start_date" size="12" value="2018-02-28" readonly="readonly">
+								<input name="selbtn1" type="button" id="selbtn1" value="选择" class="button" disabled=""> -
+								<input type="text" id="promote_start_date" size="12" value="2018-04-28" readonly="readonly">
+								<input name="selbtn1" type="button" id="selbtn1" value="选择" class="button" disabled="">
+							</td>
+						</tr>
+						<tr>
+							<td class="label">上传商品图片:</td>
+							<td>
+              					<input type="file" name="goods_img" size="35">
+                             	<br>
+                             	<input type="text" size="40" value="商品图片外部URL" style="color:#aaa;"  name="goods_img_url">
+           				 	</td>
+						</tr>
+						<tr>
+							<td class="label"> 上传商品缩略图：</td>
+							<td id="auto_thumb_3">
+              					<input type="file" name="goods_thumb" size="35" disabled="">
+              					<br>
+              					<input type="text" size="40" value="商品缩略图外部URL" name="goods_thumb_url" disabled="">
+                            	<br>
+                            	<label for="auto_thumb" class="label1">
+                            	<input type="checkbox" id="auto_thumb" name="auto_thumb" checked="true" value="1" >自动生成商品缩略图</label>   
+                            </td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="button-div">
+					<input type="button"  class="button" id="sure" onclick="addGood()" value="确定" />
+					<input type="reset"  class="button" id="res" onclick="clearMes()" value="重置" />
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

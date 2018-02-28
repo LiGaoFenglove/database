@@ -128,13 +128,120 @@ body{
 	}
 }
 
+#matter{
+	position: absolute;
+  	top: 118px;
+  	bottom: 0;
+  	width: 100%;
+  	height: auto;
+  	font-size: 12px;
+  	#left{
+  		width: 180px;
+  		cursor: auto;
+  		overflow-y: scroll;
+  		height: 100%;
+  		background: #212121;
+  		margin: 0px;
+  		padding: 0px;
+  		color: #192E32;
+  		float: left;
+  		position: relative;
+  		overflow-x: hidden;
+  		white-space: nowrap;
+  		#tabbar-div{
+  			// padding-left: 10px;
+  			height: 34px;
+  			padding-top: 0px;
+  			background: #303030;
+  			p{
+  				margin: 1px 0 0 0;
+  				span{
+  					line-height: 33px;
+  					    font-weight: bold;
+  					    padding: 4px 15px 4px 18px;
+  					    // cursor: hand;
+  					    cursor: pointer;
+  					    font-size: 14px;
+  					    font-family: "微软雅黑";
+  					    color: #fff;
+  				}
+  			}
+  			.main-div{
+  				.menu-list{
+  					cursor: pointer;
+  					.menu-ul{
+  						color: #335B64;
+  						.lis{
+  							display: block;
+  							border-top: #7f7f7f 1px solid;
+  							width: 100%;
+  							color: #FFF;
+  							line-height: 42px;
+  							text-align: left;
+  							// background: #575757;
+  							text-indent: 40px;
+  							.lis-ul{
+  								display: none;
+								background: #575757;
+  								.lis-li{
+  									font-size: 12px;
+								    height: 30px;
+								    line-height: 30px;
+								    display: block;
+								    font-weight: normal;
+						
+								    border: none;
+									a{
+										color: #c9c9c9;
+									}
 
+  								}
+  								.lis-li:hover {
+  									background: #797979;
+  								}
+  								.lis-li:hover a{
+  									color: #FFF;
+  								}
+  							}
+  						}
+  					}
+  				}
+  			}
+  		}
+  	}
+}
+.menu-ul .lis-1{
+	background: #575757 url(../../images/main/menu_1.png) 9px 0 no-repeat;
+}
+.menu-ul:hover .lis{
+	background: #454545 url(../../images/main/menu_1.png) 9px 0 no-repeat;;
+}
 
-
-
-
-
-
+#zoom{
+	width: 10px;
+	background: #303030;
+	height: 100%;
+	float: left;
+	a{
+		position: absolute;
+		top: 50%;
+		img{
+			width: 10px;
+			height: 30px;
+			display: block;
+		}
+	}
+}
+#right{
+	height: 100%;
+    background: url(../../images/main//fr1.jpg);
+    margin: 0px;
+    overflow: scroll;
+   
+}
+iframe{
+	border: none;
+}
 /*# sourceMappingURL=main.css.map */
 
 /*# sourceMappingURL=main.css.map */

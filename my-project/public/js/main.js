@@ -30,6 +30,10 @@ $("#zoom").click(function(){
 	}
 	
 })
-
+//
+$(".lis-ul li").click(function(e){
+		e.stopPropagation();
+		
+	})
 
 })

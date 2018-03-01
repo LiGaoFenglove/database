@@ -3,10 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ECSHOP 管理中心</title>
-	<link rel='stylesheet' href='stylesheets/login.css' />
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<link rel='stylesheet' href='stylesheets/css/login.css' />
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	
 </head>
 <body>
-	<form class="login_from">
+	<div class="login_from" >
 		<div class="top">
 			<img src="images/login/shopex.png">
 		</div>
@@ -22,39 +25,58 @@
 					<h3 class="panel-hd cl-link-blue"></h3>
 					
 					<div class="controls first">
-						
+						<input type="text" id="username" placeholder="用户名"/>
 					</div>
 					
 					<div class="controls two active">
-						
+						<input type="text" id="pwd" placeholder="密码"/>
 					</div>
 					
 					<div class="controls third active">
-						
+						<input type="text" id="yanzheng" placeholder="验证码"/>
+						<div class="yz"></div>
 					</div>
 				
 					<div class=" last">
-						<input type="submit" name="" value="登录" class="btn-a">	
+						<input type="submit" name="" value="登录" class="btn-a" onclick="loginFunc()">	
 					</div>
-
+					<div class= "mes">
+						<input type="checkbox" name="" id="" checked="checked" />
+						<label>保存登录信息</label>
+						<a href="" class="f-l">忘记密码?</a>
+						<a href="" class="f-r">去店铺首页>></a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</form>
+	</div>
 </body>
 <script type="text/javascript">
-	// function login() {
-	// 	$.ajax({
-	// 		url: "/api/login",
-	// 		type: "post",
-	// 		data: {
-	// 			username: $("#username").val(),
-	// 			psw: $("#psw").val()
-	// 		},
-	// 		success: function(res) {
-	// 			console.log(res);
-	// 		}
-	// 	})
-	// }
+	function loginFunc(){
+			$.ajax({
+					url : "/loginAction",
+					type : "get",
+					data : {
+						username :$("#username").val(),
+						pwd : $("#pwd").val()
+						
+					},
+					success:function(res){
+//						console.log(res);
+//						console.log(res.code)
+						if(res.code == 1){
+							if($("#yanzheng").val() == $(".yz").html()){
+								
+								location.href = "/main?r=" + new Date().getTime();
+								// location.href = "/main";
+							}else{
+								alert("验证码有误请重新输入！")
+							}
+						}else{
+							alert(res.message);
+						}
+					}
+				})	
+			}
 </script>
 </html>

@@ -58,42 +58,91 @@ router.get("/loginAction",function(req,res){
 
 
 //添加商品路由
-// router.get('/addlist', function(req, res, next) {
-// 	res.render('addlist', { title: 'Express' });
-// });
+router.get('/addlist', function(req, res, next) {
+	res.render('addlist', { title: 'Express' });
+});
 
 
-
-
-// //分页
-// router.post('/api/return', function(req, res, next) {
-// 	var now = req.body.now || 1;
-// 	var jige = req.body.jige || 7;
-// 	var mohu = null ;
-// 	if(req.body.mohu){
-// 		mohu = {"goods_name":{$regex : req.body.mohu}}
-// 	}else{
-// 		mohu = {};
-// 	}
+//添加商品
+router.post('/api/goods-upload', function(req, res, next) {
 	
-// 	console.log(req.body);
-// //	var condition = req.query.condition;	
-// 	now = parseInt(now);	
-// 	jige = parseInt(jige);
-// 	GoodsModel.count({}, function(err, count){
-// 		//后台拿到前端传过来的参数进行分页
-// 		var query = GoodsModel.find(mohu).skip((now-1)*jige).limit(jige);
+	var form = new multiparty.Form({
+		uploadDir: "public/images"
+	});
+	var result = {
+		code: 1,
+		message: "商品信息保存成功"
+	};
+	form.parse(req, function(err, body, files){
+		if(err) {
+			console.log(err);
+		}
+		console.log(body);
+		var goods_name = body.goods_name[0];
+		var price = body.goods_price[0];
+		var goods_id = body.goods_id[0];
+		var group = body.goods_group[0];
+		var imgPath = files["img"][0].path.replace("public\\", "");
+		var gm = new GoodsModel();
+		gm.goods_name = goods_name;
+		gm.goods_price = price;
+		gm.goods_id = goods_id;
+		gm.goods_group = group;
+		gm.imgPath = imgPath;
+		gm.save(function(err){
+			if(err) {
+				result.code = -99;
+				result.message = "商品保存失败";
+			}
+			res.json(result);
+		})
+	})
+});
 
-// 		query.exec(function(err, docs){
-// 			var result = {
-// 				total: count,
-// 				data: docs,
-// 				pageNO: now,
-// 				jige  : jige,
-// 				mohu  : mohu
-// 			}
-// 			res.json(result);
-// 		});
-// 	})	
-// });
+//分页
+router.post('/api/return', function(req, res, next) {
+	var now = req.body.now || 1;
+	var jige = req.body.jige || 7;
+	var mohu = null ;
+	if(req.body.mohu){
+		mohu = {"goods_name":{$regex : req.body.mohu}}
+	}else{
+		mohu = {};
+	}
+	
+	console.log(req.body);
+//	var condition = req.query.condition;	
+	now = parseInt(now);	
+	jige = parseInt(jige);
+	GoodsModel.count({}, function(err, count){
+		//后台拿到前端传过来的参数进行分页
+		var query = GoodsModel.find(mohu).skip((now-1)*jige).limit(jige);
+
+		query.exec(function(err, docs){
+			var result = {
+				total: count,
+				data: docs,
+				pageNO: now,
+				jige  : jige,
+				mohu  : mohu
+			}
+			res.json(result);
+		});
+	})	
+});
+
+router.get('/api/return', function(req, res) {
+GoodsModel.findByIdAndRemove({_id:req.query.gid},function(err){
+	var result={
+			code:1,
+			message:"商品删除成功"
+		};
+		if(err){
+			result.code=-119;
+			result.message="商品删除失败";
+		}
+		res.send(result);
+	})
+})
+
 module.exports = router;

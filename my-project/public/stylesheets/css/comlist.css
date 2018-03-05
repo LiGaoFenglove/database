@@ -1,0 +1,210 @@
+@charset "UTF-8";
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, input, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "微软雅黑";
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a, u {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+b, strong {
+  font-weight: 100;
+}
+
+em, i {
+  font-style: normal;
+}
+
+img {
+  border: 0;
+  display: block;
+}
+
+body {
+  background: url(../../images/addlist/fr1.jpg);
+  padding: 10px;
+  min-width: 773px;
+  color: #192E32;
+}
+
+h1 {
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  font-weight: normal;
+  padding: 7px 10px;
+  margin: 0 0 10px 0;
+  overflow: hidden;
+}
+h1 .action-span a {
+  float: right;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px 0 23px;
+  background: #c43926 url(../../images/addlist/fr3.gif) no-repeat 6px center;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+}
+h1 .action-span1 {
+  color: #4c4c4c;
+  font-size: 18px;
+  font-weight: normal;
+}
+h1 .action-span1 a {
+  color: #333;
+}
+h1 .action-span1 a:hover {
+  text-decoration: underline;
+  color: #EB8A3D;
+}
+h1 .help_sub {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.form-div {
+  background: #f3f3f3 url(../../images/addlist/fr12.gif) repeat-x;
+  border: 1px solid #ddd;
+  padding: 5px;
+  color: #808080;
+  margin: 0 0 10px 0;
+}
+
+.form-div form {
+  margin: 0;
+  padding: 0;
+}
+
+.form-div form img {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.form-div form select {
+  vertical-align: middle;
+}
+
+.form-div form #mohu {
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  display: inline-block;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.form-div form #ser {
+  padding: 5px 15px 5px;
+  margin: 2px 2px;
+  border: none;
+  background: #ff3f3f;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#sup {
+  width: 100%;
+  padding: 0;
+  border: 0;
+}
+
+#sup table {
+  width: 100%;
+  background: #ddd;
+}
+
+#sup table tbody tr img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#sup table tbody tr a {
+  color: #111;
+}
+
+#sup table tbody tr input {
+  vertical-align: middle;
+}
+
+#sup table tbody tr th {
+  line-height: 39px;
+  white-space: nowrap;
+  border: none;
+  background: #f3f3f3 url(../../images/addlist/fr12.gif) repeat-x;
+  font-weight: normal;
+}
+
+#sup table tbody tr td {
+  background: #fff;
+  padding: 10px;
+  line-height: 39px;
+  border: none;
+  text-align: center;
+}
+
+#sup table tbody tr td input {
+  vertical-align: middle;
+}
+
+#sup div.turn-page {
+  background: white;
+  border-bottom: none;
+  borderht: none;
+  padding: 10px;
+  line-height: 39px;
+  text-align: right;
+}
+
+#sup div.turn-page span.cc {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid #999;
+}
+
+#sup div.turn-page span.cc a {
+  color: black;
+}
+
+#sup div.turn-page span.cc a:hover {
+  color: tan;
+}
+
+#sup div.dd input {
+  padding: 5px 15px 5px;
+  margin: 2px 2px;
+  border: none;
+  background: #ff3f3f;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+div#footer {
+  background: #f3f3f3 url(../../images/addlist/fr12.gif) repeat-x;
+  border: 1px solid #ddd;
+  padding: 15px;
+  color: #9CACAF;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=comlist.css.map */

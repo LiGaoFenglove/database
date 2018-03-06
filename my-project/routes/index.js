@@ -36,9 +36,7 @@ router.get("/loginAction",function(req,res){
 		};
 	if(req.query.username == "lgf" && req.query.pwd == "1234"){
 
-//			result.code = 1;
-//			res.send(result.message);
-//			登录成功生成session		
+
 				req.session.username = req.query.username;
 				res.json(result);
 				

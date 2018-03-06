@@ -10,7 +10,7 @@ $(function(){
 
 	function checkNumber() {
 		var arr = []; //存放验证码
-		//通过循环抽取4个验证码
+
 		for(var i = 0; i < 4; i++) {
 			var code = rand(48, 122);
 			//如果验证码不符合条件
@@ -24,7 +24,6 @@ $(function(){
 		}
 		return arr.join("");
 	}
-	//放到span里
 	$(".yz").html(checkNumber());
 	$(".yz").click(function(){
 		$(".yz").html( checkNumber()) ;
